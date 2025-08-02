@@ -10,15 +10,15 @@ const faqData = [
     questions: [
       {
         question: 'How long does shipping take?',
-        answer: 'We offer free standard shipping (5-7 business days) and express shipping (2-3 business days). All orders are processed within 24 hours on business days.'
+        answer: 'We offer standard shipping (5-7 business days) for £4.99 and free shipping on orders over £50. All orders are processed within 24 hours on business days.'
       },
       {
-        question: 'Do you ship internationally?',
-        answer: 'Currently, we ship within the US and Canada. International shipping is coming soon! Follow us on Instagram @fitvault for updates.'
+        question: 'Do you ship to the UK?',
+        answer: 'Yes! We ship throughout the UK with reliable delivery partners. All prices are in GBP and include UK shipping rates.'
       },
       {
         question: 'Can I track my order?',
-        answer: 'Absolutely! Once your order ships, you\'ll receive a tracking number via email. You can also check your order status by contacting us directly.'
+        answer: 'Absolutely! Once your order ships, you\'ll receive a tracking number via email. You can also use our Track Order page to check your order status.'
       }
     ]
   },
@@ -28,11 +28,11 @@ const faqData = [
     questions: [
       {
         question: 'What sizes do you currently offer?',
-        answer: 'We currently stock Medium and Large sizes with 25 units each. We\'re working on expanding our size range based on demand and feedback from our community.'
+        answer: 'We offer sizes S, M, and L with 25 units each. Sizes XS, XL, and XXL are currently out of stock. Check our Size Guide page for detailed measurements.'
       },
       {
-        question: 'How do FitVault sizes compare to other brands?',
-        answer: 'Our sizing runs true to standard US sizing. Medium fits chest 38-40", Large fits chest 42-44". We recommend checking our detailed size guide for the perfect fit.'
+        question: 'How do your sizes compare to Nike/Adidas?',
+        answer: 'Our replica sizing matches the original Nike and Adidas sizing. S fits chest 36-38", M fits 38-40", L fits 42-44". Check our Size Guide for detailed measurements.'
       },
       {
         question: 'What if the size doesn\'t fit?',
@@ -46,7 +46,7 @@ const faqData = [
     questions: [
       {
         question: 'What is your return policy?',
-        answer: 'We accept returns within 30 days of purchase for unworn items with original tags. Items must be in original condition for a full refund.'
+        answer: 'We accept returns within 30 days of purchase for unworn items with original tags. Items must be in original condition for a full refund. See our Returns page for full details.'
       },
       {
         question: 'How do I return an item?',
@@ -72,7 +72,7 @@ const faqData = [
       },
       {
         question: 'Are there any hidden fees?',
-        answer: 'Never! The price you see is the price you pay. Free shipping on orders over $150, and no surprise fees at checkout.'
+        answer: 'Never! The price you see is the price you pay. Free shipping on orders over £50, and no surprise fees at checkout.'
       }
     ]
   },
@@ -81,16 +81,16 @@ const faqData = [
     icon: <Star className="w-5 h-5" />,
     questions: [
       {
-        question: 'What materials are your tracksuits made from?',
-        answer: 'We use premium cotton-polyester blends for comfort and durability, with moisture-wicking technology. All materials are carefully sourced for quality and comfort.'
+        question: 'What materials are your replicas made from?',
+        answer: 'Our premium replicas use high-quality materials that closely match the original Nike and Adidas pieces. We use premium cotton-polyester blends for comfort and durability.'
       },
       {
-        question: 'How should I care for my FitVault pieces?',
+        question: 'How should I care for my replica pieces?',
         answer: 'Machine wash cold with like colors, tumble dry low. Avoid bleach and fabric softeners to maintain the fabric\'s quality and color vibrancy.'
       },
       {
-        question: 'Are your products ethically made?',
-        answer: 'Yes! We work with certified manufacturers who meet our standards for fair labor practices and environmental responsibility.'
+        question: 'How do your replicas compare to retail?',
+        answer: 'Our replicas offer the same styling and quality as retail pieces at 70-80% off the original price. Premium materials, authentic design, unbeatable value.'
       }
     ]
   },
@@ -99,16 +99,16 @@ const faqData = [
     icon: <Users className="w-5 h-5" />,
     questions: [
       {
-        question: 'How often do you release new drops?',
-        answer: 'We typically release new collections every 6-8 weeks. Follow us on Instagram and join our VIP list to be the first to know about upcoming drops.'
+        question: 'How often do you get new replicas?',
+        answer: 'We receive new Nike and Adidas replicas every 2-3 weeks. Follow us on Instagram and join our VIP list to be the first to know about new arrivals.'
       },
       {
         question: 'Will sold-out items restock?',
-        answer: 'Our drops are limited edition, so most items won\'t restock. However, popular pieces might return in new colorways or updated designs in future collections.'
+        answer: 'Popular replicas often restock, but quantities are limited. We recommend joining our VIP list to get notified when your favorite pieces are back in stock.'
       },
       {
-        question: 'How can I get early access to drops?',
-        answer: 'Join our VIP list for 24-hour early access to new drops. VIP members also get exclusive access to limited colorways and special pricing.'
+        question: 'How can I get early access to new arrivals?',
+        answer: 'Join our VIP list for 24-hour early access to new replica arrivals. VIP members also get exclusive access to limited pieces and special pricing.'
       }
     ]
   }

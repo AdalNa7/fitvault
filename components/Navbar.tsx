@@ -18,38 +18,41 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
             <Vault className="w-8 h-8 text-red-500" />
-            <span className="text-2xl font-bold gradient-text">FitVault</span>
+            <span className="text-2xl font-black">
+              <span className="text-white">Fit</span>
+              <span className="text-red-500">Vault</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-red-500 transition-colors font-medium">
+            <Link href="/" className="text-white hover:text-red-500 transition-colors font-semibold">
               Home
             </Link>
-            <Link href="/shop" className="text-white hover:text-red-500 transition-colors font-medium">
+            <Link href="/shop" className="text-white hover:text-red-500 transition-colors font-semibold">
               Shop
             </Link>
-            <Link href="/about" className="text-white hover:text-red-500 transition-colors font-medium">
+            <Link href="/about" className="text-white hover:text-red-500 transition-colors font-semibold">
               About
             </Link>
-            <Link href="/contact" className="text-white hover:text-red-500 transition-colors font-medium">
+            <Link href="/contact" className="text-white hover:text-red-500 transition-colors font-semibold">
               Contact
             </Link>
-            <Link href="/faq" className="text-white hover:text-red-500 transition-colors font-medium">
+            <Link href="/faq" className="text-white hover:text-red-500 transition-colors font-semibold">
               FAQ
             </Link>
           </div>
 
           {/* Cart Icon */}
           <div className="flex items-center space-x-4">
-            <button className="relative p-2 hover:bg-zinc-800 rounded-lg transition-colors">
-              <ShoppingBag className="w-6 h-6" />
+            <Link href="/checkout" className="relative p-2 hover:bg-zinc-800 rounded-lg transition-colors">
+              <ShoppingBag className="w-6 h-6 text-white" />
               {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
-            </button>
+            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -67,35 +70,35 @@ export function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 href="/"
-                className="block px-3 py-2 text-white hover:text-red-500 transition-colors"
+                className="block px-3 py-2 text-white hover:text-red-500 transition-colors font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/shop"
-                className="block px-3 py-2 text-white hover:text-red-500 transition-colors"
+                className="block px-3 py-2 text-white hover:text-red-500 transition-colors font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 Shop
               </Link>
               <Link
                 href="/about"
-                className="block px-3 py-2 text-white hover:text-red-500 transition-colors"
+                className="block px-3 py-2 text-white hover:text-red-500 transition-colors font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/contact"
-                className="block px-3 py-2 text-white hover:text-red-500 transition-colors"
+                className="block px-3 py-2 text-white hover:text-red-500 transition-colors font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
               <Link
                 href="/faq"
-                className="block px-3 py-2 text-white hover:text-red-500 transition-colors"
+                className="block px-3 py-2 text-white hover:text-red-500 transition-colors font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 FAQ

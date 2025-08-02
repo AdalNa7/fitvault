@@ -15,7 +15,7 @@ export function Footer() {
               <span className="text-2xl font-bold gradient-text">FitVault</span>
             </Link>
             <p className="text-zinc-400 text-sm">
-              Exclusive streetwear for the urban elite. Crafted by brothers, worn by legends.
+              Premium Nike & Adidas replicas at unbeatable prices. Quality materials, authentic styling.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-zinc-400 hover:text-red-500 transition-colors">
@@ -62,24 +62,24 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">Customer Care</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link href="/size-guide" className="text-zinc-400 hover:text-white transition-colors">
                   Size Guide
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link href="/shipping-info" className="text-zinc-400 hover:text-white transition-colors">
                   Shipping Info
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link href="/returns" className="text-zinc-400 hover:text-white transition-colors">
                   Returns
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+                <Link href="/track-order" className="text-zinc-400 hover:text-white transition-colors">
                   Track Order
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -88,7 +88,7 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Stay Updated</h3>
             <p className="text-zinc-400 text-sm mb-4">
-              Get the latest drops and exclusive access to limited collections.
+              Get notified when new replicas arrive. Save up to 80% off retail prices.
             </p>
             <div className="space-y-2">
               <input

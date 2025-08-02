@@ -2,70 +2,70 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Star, ShoppingBag, Zap } from 'lucide-react';
+import { ShoppingBag, Zap } from 'lucide-react';
 import { useCart } from '@/components/CartProvider';
 import { useToast } from '@/hooks/use-toast';
 
 const products = [
   {
     id: 1,
-    name: 'Elite Obsidian Set',
-    price: 189,
-    image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg',
-    brand: 'FitVault',
+    name: 'Nike Tech Fleece Replica',
+    price: 35.99,
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop',
+    brand: 'Nike',
     rating: 4.9,
     isNew: true,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   },
   {
     id: 2,
-    name: 'Urban Legend Tracksuit',
-    price: 229,
-    image: 'https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg',
-    brand: 'Nike-Inspired',
+    name: 'Adidas Tiro Tracksuit',
+    price: 28.99,
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop',
+    brand: 'Adidas',
     rating: 4.8,
     isNew: false,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   },
   {
     id: 3,
-    name: 'Midnight Velocity Set',
-    price: 199,
-    image: 'https://images.pexels.com/photos/1306248/pexels-photo-1306248.jpeg',
-    brand: 'FitVault',
+    name: 'Nike Sportswear Set',
+    price: 42.99,
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop&crop=center',
+    brand: 'Nike',
     rating: 4.9,
     isNew: true,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   },
   {
     id: 4,
-    name: 'Shadow Elite Collection',
-    price: 249,
-    image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg',
-    brand: 'Adidas-Inspired',
+    name: 'Adidas Originals Tracksuit',
+    price: 32.99,
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center',
+    brand: 'Adidas',
     rating: 5.0,
     isNew: false,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   },
   {
     id: 5,
-    name: 'Platinum Dynasty Set',
-    price: 299,
-    image: 'https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg',
-    brand: 'Prada-Inspired',
+    name: 'Nike ACG Collection',
+    price: 48.99,
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop&crop=top',
+    brand: 'Nike',
     rating: 4.7,
     isNew: true,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   },
   {
     id: 6,
-    name: 'Carbon Fiber Elite',
-    price: 279,
-    image: 'https://images.pexels.com/photos/1306248/pexels-photo-1306248.jpeg',
-    brand: 'FitVault',
+    name: 'Adidas Y-3 Style',
+    price: 55.99,
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=top',
+    brand: 'Adidas',
     rating: 4.8,
     isNew: false,
-    stock: { Medium: 25, Large: 25 }
+    stock: { XS: 0, S: 25, M: 25, L: 25, XL: 0, XXL: 0 }
   }
 ];
 
@@ -85,7 +85,7 @@ export function ProductGrid({ filters }: ProductGridProps) {
 
   // Filter products based on filters
   let filteredProducts = products.filter(product => {
-    if (filters.size && !product.stock[filters.size as keyof typeof product.stock]) {
+    if (filters.size && product.stock[filters.size as keyof typeof product.stock] <= 0) {
       return false;
     }
     if (filters.brand && product.brand !== filters.brand) {
@@ -113,7 +113,7 @@ export function ProductGrid({ filters }: ProductGridProps) {
   });
 
   const handleQuickAdd = (product: typeof products[0]) => {
-    const selectedSize = selectedSizes[product.id] || 'Medium';
+    const selectedSize = selectedSizes[product.id] || 'M';
     
     addItem({
       id: product.id,
@@ -159,17 +159,31 @@ export function ProductGrid({ filters }: ProductGridProps) {
                 </div>
               )}
               
-              <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-sm">
-                <div className="flex items-center">
-                  <Star className="w-3 h-3 text-yellow-400 fill-current mr-1" />
-                  {product.rating}
-                </div>
-              </div>
+
 
               {/* Quick Add Overlay */}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center space-y-3">
-                  <div className="flex gap-2 justify-center">
+                  <div className="flex gap-2 justify-center flex-wrap">
+                    {/* XS - Unavailable */}
+                    <button
+                      disabled
+                      className="px-3 py-1 rounded text-sm font-semibold border-zinc-600 bg-zinc-800 text-zinc-500 cursor-not-allowed line-through"
+                    >
+                      XS
+                    </button>
+                    {/* S - Available */}
+                    <button
+                      onClick={() => setSelectedSizes({ ...selectedSizes, [product.id]: 'Small' })}
+                      className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
+                        selectedSizes[product.id] === 'Small'
+                          ? 'bg-red-500 text-white'
+                          : 'bg-white/20 text-white hover:bg-white/30'
+                      }`}
+                    >
+                      S
+                    </button>
+                    {/* M - Available */}
                     <button
                       onClick={() => setSelectedSizes({ ...selectedSizes, [product.id]: 'Medium' })}
                       className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
@@ -180,6 +194,7 @@ export function ProductGrid({ filters }: ProductGridProps) {
                     >
                       M
                     </button>
+                    {/* L - Available */}
                     <button
                       onClick={() => setSelectedSizes({ ...selectedSizes, [product.id]: 'Large' })}
                       className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
@@ -190,14 +205,31 @@ export function ProductGrid({ filters }: ProductGridProps) {
                     >
                       L
                     </button>
+                    {/* XL - Unavailable */}
+                    <button
+                      disabled
+                      className="px-3 py-1 rounded text-sm font-semibold border-zinc-600 bg-zinc-800 text-zinc-500 cursor-not-allowed line-through"
+                    >
+                      XL
+                    </button>
+                    {/* XXL - Unavailable */}
+                    <button
+                      disabled
+                      className="px-3 py-1 rounded text-sm font-semibold border-zinc-600 bg-zinc-800 text-zinc-500 cursor-not-allowed line-through"
+                    >
+                      XXL
+                    </button>
                   </div>
-                  <button
-                    onClick={() => handleQuickAdd(product)}
-                    className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center space-x-2"
-                  >
-                    <ShoppingBag className="w-4 h-4" />
-                    <span>Quick Add</span>
-                  </button>
+                  <p className="text-white text-xs">Available sizes: S, M, L</p>
+                  <div className="flex justify-center">
+                    <button
+                      onClick={() => handleQuickAdd(product)}
+                      className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center space-x-2"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>Quick Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,7 +246,7 @@ export function ProductGrid({ filters }: ProductGridProps) {
               
               <div className="flex items-center justify-between mt-3">
                 <span className="text-2xl font-bold text-white">
-                  ${product.price}
+                  £{product.price}
                 </span>
                 <div className="flex items-center text-zinc-400 text-sm">
                   <Zap className="w-4 h-4 text-yellow-500 mr-1" />

@@ -11,8 +11,8 @@ interface FilterProps {
 }
 
 export function ProductFilters({ filters, setFilters }: FilterProps) {
-  const sizes = ['Medium', 'Large'];
-  const brands = ['FitVault', 'Nike-Inspired', 'Adidas-Inspired', 'Prada-Inspired'];
+  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const brands = ['Nike', 'Adidas'];
   const sortOptions = [
     { value: 'newest', label: 'Newest First' },
     { value: 'price-low', label: 'Price: Low to High' },
@@ -27,57 +27,35 @@ export function ProductFilters({ filters, setFilters }: FilterProps) {
       {/* Size Filter */}
       <div className="mb-6">
         <h4 className="text-white font-semibold mb-3">Size</h4>
-        <div className="space-y-2">
+        <select
+          value={filters.size}
+          onChange={(e) => setFilters({ ...filters, size: e.target.value })}
+          className="w-full bg-zinc-800 border border-zinc-600 text-white rounded px-3 py-2 focus:outline-none focus:border-red-500"
+        >
+          <option value="">All Sizes</option>
           {sizes.map(size => (
-            <label key={size} className="flex items-center">
-              <input
-                type="radio"
-                name="size"
-                value={size}
-                checked={filters.size === size}
-                onChange={(e) => setFilters({ ...filters, size: e.target.value })}
-                className="text-red-500 focus:ring-red-500 bg-zinc-800 border-zinc-600"
-              />
-              <span className="ml-2 text-zinc-300">{size}</span>
-            </label>
+            <option key={size} value={size}>
+              {size}
+            </option>
           ))}
-        </div>
-        {filters.size && (
-          <button
-            onClick={() => setFilters({ ...filters, size: '' })}
-            className="text-red-500 text-sm mt-2 hover:underline"
-          >
-            Clear Size
-          </button>
-        )}
+        </select>
       </div>
 
       {/* Brand Filter */}
       <div className="mb-6">
         <h4 className="text-white font-semibold mb-3">Brand Style</h4>
-        <div className="space-y-2">
+        <select
+          value={filters.brand}
+          onChange={(e) => setFilters({ ...filters, brand: e.target.value })}
+          className="w-full bg-zinc-800 border border-zinc-600 text-white rounded px-3 py-2 focus:outline-none focus:border-red-500"
+        >
+          <option value="">All Brands</option>
           {brands.map(brand => (
-            <label key={brand} className="flex items-center">
-              <input
-                type="radio"
-                name="brand"
-                value={brand}
-                checked={filters.brand === brand}
-                onChange={(e) => setFilters({ ...filters, brand: e.target.value })}
-                className="text-red-500 focus:ring-red-500 bg-zinc-800 border-zinc-600"
-              />
-              <span className="ml-2 text-zinc-300">{brand}</span>
-            </label>
+            <option key={brand} value={brand}>
+              {brand}
+            </option>
           ))}
-        </div>
-        {filters.brand && (
-          <button
-            onClick={() => setFilters({ ...filters, brand: '' })}
-            className="text-red-500 text-sm mt-2 hover:underline"
-          >
-            Clear Brand
-          </button>
-        )}
+        </select>
       </div>
 
       {/* Sort By */}

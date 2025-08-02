@@ -37,13 +37,13 @@ export function DropTimer() {
           <div className="flex justify-center items-center mb-6">
             <Flame className="w-8 h-8 text-red-500 mr-3 animate-pulse" />
             <h2 className="text-4xl sm:text-5xl font-bold">
-              <span className="gradient-text">Next Drop</span>
+              <span className="gradient-text">New Arrivals</span>
             </h2>
             <Flame className="w-8 h-8 text-red-500 ml-3 animate-pulse" />
           </div>
           
           <p className="text-xl text-zinc-400 mb-12">
-            The Platinum Collection launches soon. Be ready to secure your piece of urban luxury.
+            Fresh Nike & Adidas replicas dropping soon. Limited stock, premium quality.
           </p>
 
           <div className="grid grid-cols-4 gap-4 sm:gap-8 mb-12">
@@ -72,10 +72,10 @@ export function DropTimer() {
               </span>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              Join the VIP List
+              Get Early Access
             </h3>
             <p className="text-zinc-300 mb-6">
-              Get notified 24 hours before the public drop and secure exclusive access to limited pieces.
+              Be first to know when new replicas arrive. Limited quantities, premium quality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
